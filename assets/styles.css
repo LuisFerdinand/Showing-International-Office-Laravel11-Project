@@ -123,6 +123,19 @@ img {
     font-size: small;
 }
 
+.btn{
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(52, 58, 64, 0.8);
+    color: #dfdfdf;
+    transition: transform 0.5s;
+}
+.btn:hover{
+    background-color: rgba(63, 71, 78, 0.8);
+    transform: scale(1.01);
+}
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
     .row {
