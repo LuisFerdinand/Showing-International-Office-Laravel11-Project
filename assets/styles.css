@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background: hsl(240, 4%, 11%);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #dfdfdf;
+}
+h1{
+    font-size: 60px;
+}
+
+h2{
+    font-size: 40px;
+}
+
+p{
+    color: hsla(0, 0%, 87%, 0.755);
+}
+
+/* Header/Blog Title */
+.header {
+    color: #dfdfdf;
+    padding: 30px;
+    text-align: center;
+    background: url('https://img.freepik.com/free-photo/sunlight-shining-single-mountain-top-sunset-with-dark-cloudy-sky_181624-377.jpg?t=st=1718181055~exp=1718184655~hmac=da0ca7472057cfeb6de64e2604623fe300ca2f0de2e74db9cc5e9020a9c501da&w=1380') no-repeat center center;
+    background-size: cover;
+}
+
+.row {
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 0 20px;
+}
+
+/* Create two unequal columns that float next to each other */
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 75%;
+    color: #dfdfdf;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+    color: #dfdfdf;
+}
+
+/* Fake image */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: rgba(52, 58, 64, 0.8);
+    padding: 20px;
+    margin-top: 20px;
+    max-width: max-content;
+    color: #dfdfdf;
+}
+.card-forlink {
+    background-color: rgba(52, 58, 64, 0.8);
+    padding: 40px;
+    margin-top: 20px;
+    max-width: max-content;
+    color: #dfdfdf;
+    align-items: center;
+}
+
+.double_img {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+.double_img img {
+    width: 50%;
+    object-fit: cover;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.portfolioImg{
+    height: 200px;
+    object-fit: cover;
+}
+.layer{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), #FFFF40);
+}
+.link{
+    color: rgba(98, 98, 255, 0.511);
+}
+.link:hover{
+    color: rgb(98, 98, 255);
+}
+
+/* Footer */
+.footer {
+    padding: 5px;
+    text-align: center;
+    margin-top: 20px;
+    color: #dfdfdf;
+    font-weight: normal;
+    font-size: small;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .row {
+        padding: 0 20px;
+    }
+
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .card-forlink{
+        padding: 20px;
+    }
+}
