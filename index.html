@@ -22,28 +22,14 @@
           <img src="assets/1.png" alt="Program Image" />
           <p>
             In our Laravel project, we've implemented a dynamic feature that
-            enhances the user experience by automatically generating a card for
-            each new program added to the database. This means that whenever a
-            new program is inserted into the database, a visually appealing card
-            pops out, providing users with quick access to details about the
-            newly added program.
-          </p>
-          <p>
-            The cards are categorized into inbound and outbound programs, with
-            each category having its own dedicated page. This organization helps
-            users easily find relevant programs based on their interest.
-          </p>
-          <p>
-            The card includes key information such as the program title,
-            schedule, description, and any other relevant details. This
-            automation not only saves time for administrators but also ensures
-            that users are promptly informed about the latest program offerings.
-          </p>
-          <p>
-            By seamlessly integrating database updates with real-time card
-            generation, this feature streamlines the process of managing and
-            presenting programs, enhancing the overall efficiency and
-            user-friendliness of our platform.
+            automatically generates visually appealing cards for new programs
+            added to the database. These cards categorize programs into inbound
+            and outbound, each with its own page, helping users find relevant
+            programs easily. The cards display key information like program
+            title, schedule, and description, saving time for administrators and
+            keeping users informed. This real-time card generation streamlines
+            program management and enhances platform efficiency and
+            user-friendliness.
           </p>
         </div>
         <div class="card">
@@ -87,7 +73,7 @@
           </p>
         </div>
         <div class="card">
-          <h2>Programs CRUD Table</h2>
+          <h2>Content management System</h2>
           <div class="double_img">
             <img src="assets/6.png" alt="Image" />
             <img src="assets/7.png" alt="Image" />
@@ -106,28 +92,64 @@
       <div class="rightcolumn">
         <div class="card">
           <h2>About Me</h2>
-          <img
-            src="assets/user.png"
-            alt="About Me Image"
-          />
-            <p>Hello! I'm Luis Ferdinand, a passionate web developer with a strong background in HTML, CSS, JavaScript, and various frameworks like Laravel and Vue.js. I enjoy creating dynamic, user-friendly web applications and continuously learning new technologies to enhance my skills.</p>
-            <p>Currently, I'm working on a Laravel project that showcases my ability to build robust and efficient web applications. This project includes features like dynamic card generation, CRUD operations, and an admin dashboard, demonstrating my proficiency in full-stack development.</p>
-            <p>In my free time, I love exploring new manhwa, watching movies, and playing Mobile Legends: Bang Bang. I'm also interested in data analysis and machine learning, and I'm working on a research project involving MPL match predictions.</p>
-            <p>Feel free to connect with me on LinkedIn, GitHub, or Instagram. I'm always open to discussing new ideas, collaborating on projects, or just having a chat about technology and development.</p>
+          <img src="assets/user.png" alt="About Me Image" />
+          <p>
+            Hello! I'm Luis Ferdinand, a passionate web developer with a strong
+            background in HTML, CSS, JavaScript, and various frameworks like
+            Laravel and Vue.js. I enjoy creating dynamic, user-friendly web
+            applications and continuously learning new technologies to enhance
+            my skills.
+          </p>
+          <p>
+            Currently, I'm working on a Laravel project that showcases my
+            ability to build robust and efficient web applications. This project
+            includes features like dynamic card generation, CRUD operations, and
+            an admin dashboard, demonstrating my proficiency in full-stack
+            development.
+          </p>
+          <p>
+            In my free time, I love exploring new manhwa, watching movies, and
+            playing Mobile Legends: Bang Bang. I'm also interested in data
+            analysis and machine learning, and I'm working on a research project
+            involving MPL match predictions.
+          </p>
+          <p>
+            Feel free to connect with me on LinkedIn, GitHub, or Instagram. I'm
+            always open to discussing new ideas, collaborating on projects, or
+            just having a chat about technology and development.
+          </p>
         </div>
         <div class="card">
           <h3>Portofolio</h3>
-          <a href="https://github.com/LuisFerdinand"><img class="portfolioImg" src="assets/work-1.png" alt="Port1" /></a>
-          <a href="https://inovasibsf.id/websitedasboardprojeck/Detailprojeck/index.html"><img class="portfolioImg" src="assets/work-2.png" alt="Port 2" /></a>
-          <a href="https://github.com/LuisFerdinand/Vue-js-10-simple-project"><img class="portfolioImg" src="assets/work-3.png" alt="Port3" /></a>
+          <a href="https://github.com/LuisFerdinand"
+            ><img class="portfolioImg" src="assets/work-1.png" alt="Port1"
+          /></a>
+          <a
+            href="https://inovasibsf.id/websitedasboardprojeck/Detailprojeck/index.html"
+            ><img class="portfolioImg" src="assets/work-2.png" alt="Port 2"
+          /></a>
+          <a href="https://github.com/LuisFerdinand/Vue-js-10-simple-project"
+            ><img class="portfolioImg" src="assets/work-3.png" alt="Port3"
+          /></a>
         </div>
-        <div class="card-forlink">
-          <h3>Original Laravel11 Project</h3>
-          <a class="https://github.com/LuisFerdinand/InternationalOffice" href="">@Github - International Office</a>
-        </div>
+        <a class="https://github.com/LuisFerdinand/InternationalOffice" href="">
+          <div class="card">
+            <h3>Original Laravel11 Project</h3>
+          </div>
+        </a>
       </div>
     </div>
-    <h3 class="footer">@LuisFerdinand - Laravel International Office Project</h3>
-
-    </body>
+    <h3 class="footer">
+      @LuisFerdinand - Laravel International Office Project
+    </h3>
+  </body>
 </html>
+<script>
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("active");
+    });
+  });
+</script>
