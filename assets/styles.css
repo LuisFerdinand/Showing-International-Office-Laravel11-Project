@@ -8,85 +8,78 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: #dfdfdf;
+    margin: 0;
+    padding: 0;
 }
-h1{
+
+h1 {
     font-size: 60px;
 }
 
-h2{
+h2 {
     font-size: 40px;
 }
 
-p{
+p {
     color: hsla(0, 0%, 87%, 0.755);
     text-align: justify;
 }
 
-/* Header/Blog Title */
 .header {
     color: #dfdfdf;
     padding: 30px;
     text-align: center;
     background: url('DNAND.png') no-repeat center center;
     background-size: cover;
+    border-bottom: 1px solid rgba(52, 58, 64, 0.8);
 }
 
-.row {
+.container {
+    display: grid;
+    grid-template-columns: 3fr 0.75fr;
+    gap: 20px;
+    max-width: 1200px;
     margin: 0 auto;
-    max-width: 1500px;
-    padding: 0 20px;
+    padding: 20px;
 }
 
-/* Create two unequal columns that float next to each other */
-/* Left column */
-.leftcolumn {
-    float: left;
-    width: 75%;
-    color: #dfdfdf;
+.leftcolumn, .rightcolumn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Right column */
-.rightcolumn {
-    float: left;
-    width: 25%;
-    padding-left: 20px;
-    color: #dfdfdf;
-}
-
-/* Fake image */
 img {
     width: 100%;
     height: auto;
 }
 
-/* Add a card effect for articles */
 .card {
     background-color: rgba(52, 58, 64, 0.8);
     padding: 20px;
-    margin-top: 20px;
-    max-width: max-content;
     color: #dfdfdf;
     transition: transform 0.5s;
     border-radius: 5px;
 }
 
-.card img{
-    opacity: 0.9;
+.card img {
+    opacity: 0.8;
     background-color: azure;
 }
-  
-.card:hover{
-    background-color: rgba(63, 71, 78, 0.8);;
+
+.card:hover {
+    background-color: rgba(63, 71, 78, 0.8);
     transform: scale(1.01);
 }
+
 .card.active {
     height: auto;
-  }
+}
 
 .double_img {
     display: flex;
     justify-content: space-between;
-    max-width: 100%;
+    gap: 10px;
 }
 
 .double_img img {
@@ -94,26 +87,16 @@ img {
     object-fit: cover;
 }
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.portfolioImg{
+.portfolioImg {
     height: 200px;
     object-fit: cover;
+    transition: transform 0.3s;
 }
 
-.link{
-    color: rgba(98, 98, 255, 0.511);
-}
-.link:hover{
-    color: rgb(98, 98, 255);
+.portfolioImg:hover {
+    transform: scale(1.05);
 }
 
-/* Footer */
 .footer {
     padding: 5px;
     text-align: center;
@@ -123,35 +106,121 @@ img {
     font-size: small;
 }
 
-.btn{
-    margin-top: 20px;
+.btn {
+    margin-top: 5px;
     border-radius: 5px;
     border: none;
+    padding: 20px;
+    font-size: 20px;
     background-color: rgba(52, 58, 64, 0.8);
     color: #dfdfdf;
     transition: transform 0.5s;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: rgba(63, 71, 78, 0.8);
     transform: scale(1.01);
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
-    .row {
-        padding: 0 20px;
+    .container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgba(52, 58, 64, 0.8);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    transition: transform 0.5s;
+}
+
+#topBtn:hover {
+    background-color: rgba(63, 71, 78, 0.8);
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.6s;
+}
+
+.modal-content {
+    background-color: #2d2d2d;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(102, 102, 102);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
     }
 
     .leftcolumn, .rightcolumn {
         width: 100%;
-        padding: 0;
+    }
+
+    .card {
+        margin-bottom: 10px;
+    }
+
+    .portfolioImg{
+        display: absolute;
+        margin-bottom: 10px;
+        max-width:100%;
+    }
+
+    .btn{
+        width: 100%;
+        height: auto;
     }
 }
-
-@media screen and (max-width: 1200px){
-
-}
-
-
-  
-
